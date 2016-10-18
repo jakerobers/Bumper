@@ -55,8 +55,6 @@ public class Bumper {
 		
 		if (website.isValid()) {
 			website.doAction(new ChromeDriver());
-		} else {
-			throw new Exception("Fields are missing: Please include --username, --password, --thread, --message, and --driver.");
 		}
 	}
 }

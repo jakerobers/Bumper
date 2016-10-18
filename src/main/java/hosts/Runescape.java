@@ -36,27 +36,35 @@ public class Runescape extends Website implements WebsiteProperties {
 
 		driver.findElement(By.id("reply-box__area")).sendKeys(this.message);
 		driver.findElement(By.xpath("//input[@type='submit' and @value='Post']")).click();
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.findElement(By.id("reply-box__area"));
 
 		driver.close();	
 	}
 
 	public boolean isValid() {
+		boolean isValid = true;
+		
 		if (this.username == null) {
 			System.err.println("Username must be provided!");
+			isValid = false;
 		}
 
 		if (this.password == null) {
 			System.err.println("Password must be provided!");
+			isValid = false;
 		}
 
 		if (this.thread == null) {
 			System.err.println("Thread must be provided!");
+			isValid = false;
 		}
 
 		if (this.message == null) {
 			System.err.println("Message must be provided!");
+			isValid = false;
 		}
 
-		return false;
+		return isValid;
 	}
 }

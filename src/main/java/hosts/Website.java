@@ -1,8 +1,8 @@
 package hosts;
 
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.WebDriver;
 
-public class Website {
+public class Website implements WebsiteProperties {
 
 
 	protected String username;
@@ -54,11 +54,11 @@ public class Website {
 		return this.message;
 	}
 
-	public void doAction(ChromeDriver chromeDriver) {
+	public boolean isValid() {
 		throw new UnsupportedOperationException();
 	}
 
-	public boolean isValid() {
+	public void doAction(WebDriver driver) {
 		throw new UnsupportedOperationException();
 	}
 }
