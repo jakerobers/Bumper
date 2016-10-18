@@ -1,9 +1,9 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.jakerobers</groupId>
-  <artifactId>rsbumper</artifactId>
+  <artifactId>bumper</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <name>RSBumper</name>
+  <name>Bumper</name>
 
   <dependencies>
     <dependency>
@@ -21,7 +21,7 @@
           <finalName>rsbumper</finalName>
           <archive>
             <manifest>
-              <mainClass>rsbumper.RSBumper</mainClass>
+              <mainClass>bumper.Bumper</mainClass>
             </manifest>
           </archive>
           <descriptorRefs>
