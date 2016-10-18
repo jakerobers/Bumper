@@ -28,8 +28,7 @@ public class RSBumper {
 			} else if (arg[0].equals("--driver")) {
 				driverLocation = arg[1];
 			} else if (arg[0].equals("--help") || arg[0].equals("-h")) {
-				System.out.println(
-						"java -cp target/RSBumper-0.0.1-SNAPSHOT.jar com.jakerobers.rsbumper.Main --username=\"my_username\" --password=\"my_secret\" --thread=\"302\" --message=\"Bump\"");
+				System.out.println("See the github page for more information: ");
 			} else {
 				System.out.println("Unknown argument: " + arg[0] + ". use -h for options.");
 			}
@@ -54,12 +53,6 @@ public class RSBumper {
 		if (driverLocation == null) {
 			System.err.println("Driver must be provided!");
 		}	
-
-		System.out.println("username: " + username);
-		System.out.println("password: " + password);
-		System.out.println("message: " + message);
-		System.out.println("thread: " + thread);
-		System.out.println("driver: " + driverLocation);
 
 		System.setProperty("webdriver.chrome.driver", driverLocation);	
 		WebDriver driver = new ChromeDriver();
