@@ -15,7 +15,7 @@ public class Runescape extends Website implements WebsiteProperties {
 		super(username, password, thread, message);
 	}
 	
-	public void doAction(WebDriver driver) {
+	public void doAction(WebDriver driver) throws InterruptedException {
 		driver.get("http://www.runescape.com/a=13/community");
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
@@ -23,7 +23,9 @@ public class Runescape extends Website implements WebsiteProperties {
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
 		driver.findElement(By.id("login-username")).sendKeys(this.username);
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.findElement(By.id("login-password")).sendKeys(this.password);
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.findElement(By.id("rs-login-submit")).click();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
@@ -31,14 +33,15 @@ public class Runescape extends Website implements WebsiteProperties {
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
 		driver.findElement(By.id("searchThreads")).sendKeys(this.thread);
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.findElement(By.id("submitSearch")).click();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
 		driver.findElement(By.id("reply-box__area")).sendKeys(this.message);
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.findElement(By.xpath("//input[@type='submit' and @value='Post']")).click();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		driver.findElement(By.id("reply-box__area"));
-
+		Thread.sleep(10000);
 		driver.close();	
 	}
 

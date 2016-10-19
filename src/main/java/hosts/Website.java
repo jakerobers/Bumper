@@ -58,7 +58,7 @@ public class Website implements WebsiteProperties {
 		throw new UnsupportedOperationException();
 	}
 
-	public void doAction(WebDriver driver) {
+	public void doAction(WebDriver driver) throws InterruptedException {
 		throw new UnsupportedOperationException();
 	}
 }

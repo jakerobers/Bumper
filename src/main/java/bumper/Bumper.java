@@ -1,6 +1,6 @@
 package bumper;
 
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 import hosts.Runescape;
 import hosts.Website;
@@ -36,8 +36,6 @@ public class Bumper {
 				website.setThread(arg[1]);
 			} else if (arg[0].equals("--message")) {
 				website.setMessage(arg[1]);
-			}  else if (arg[0].equals("--driver")) {
-				driverLocation = arg[1];
 			} else if (arg[0].equals("--help") || arg[0].equals("-h")) {
 				System.out.println("See the github page for more information: ");
 			} else if (arg[0].equals("--website")) {
@@ -51,10 +49,8 @@ public class Bumper {
 			System.err.println("Driver location must be provided!");
 		}
 		
-		System.setProperty("webdriver.chrome.driver", driverLocation);	
-		
 		if (website.isValid()) {
-			website.doAction(new ChromeDriver());
+			website.doAction(new FirefoxDriver());
 		}
 	}
 }
